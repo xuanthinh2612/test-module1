@@ -10,6 +10,7 @@ function findMax(arr) {
     }
     return max;
 }
+
 //test result
 console.log(findMax(arr))
 
@@ -24,6 +25,7 @@ function tryRemoveFromArray(arr, x) {
     }
     return arr;
 }
+
 //test result
 console.log(tryRemoveFromArray(arr, 4))
 
@@ -31,20 +33,26 @@ console.log(tryRemoveFromArray(arr, 4))
 function isFibonacci(n) {
     let a = 0;
     let b = 1;
-    for (let i = 1; i <= n; i++) {
-        let c = a + b;
-        if (n === c) {
-            return true;
+    let c = 0;
+    if (n === a || n === b) {
+        return true
+    } else {
+        for (let i = 1; c <= n; i++) {
+            c = a + b;
+            if (n === c) {
+                return true;
+            } else {
+                a = b;
+                b = c;
+            }
         }
-        else {
-            a = b;
-            b = c;
-        }
+        return false;
     }
-    return false;
 }
+
 //test result
 console.log(isFibonacci(55));
+
 ////Bai 4
 class Circle {
     constructor(x, y, radius, color) {
@@ -99,6 +107,7 @@ class Circle {
 
     }
 }
+
 //draw a circle
 let circle = new Circle(100, 100, 50, 'blue');
 circle.draw();
